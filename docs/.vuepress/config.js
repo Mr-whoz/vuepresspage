@@ -15,5 +15,5 @@ export default defineUserConfig({
   }),
 
   bundler: viteBundler(),
-  base: '/',
+  base: 'vuepresspage',
 })
