@@ -15,9 +15,5 @@ export default defineUserConfig({
   }),
 
   bundler: viteBundler(),
+  base: '/',
 })
-
-module.exports = {
-  base: '/', // 根据实际情况修改
-  // 其他配置...
-}
