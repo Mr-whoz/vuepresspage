@@ -25,13 +25,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: npm
+          cache: pnpm
 
+      # 安装 pnpm
+      - name: 安装 pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest  # 使用最新版本的 pnpm
+
+      # 安装依赖（pnpm 特有命令）
       - name: 安装依赖
-        run: npm install
+        run: pnpm install
 
+      # 构建文档（使用 pnpm 运行脚本）
       - name: 构建文档
-        run: npm run docs:build  # 对应 package.json 中的构建命令
+        run: pnpm docs:build
 
       - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4
